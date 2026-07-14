@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.tsx';
+import Marquee from '../components/Marquee.astro';
+import Featured from '../components/Featured.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="MINI SOCITY | Premium Kid's Sneakers">
+	<Header />
+	<main>
+		<Hero client:load />
+		<Marquee />
+        <Featured />
+	</main>
+    <Footer />
+</Layout>
+

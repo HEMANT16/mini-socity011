@@ -1,0 +1,109 @@
+---
+---
+<footer class="bg-premium-cream pt-24 pb-0 overflow-hidden relative border-t-2 border-charcoal">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="max-w-[90rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10 items-center">
+        
+        {/* Brand */}
+        <div class="col-span-1 md:col-span-4">
+          <div class="flex items-center overflow-visible">
+            <img src="/ms-logo.png" alt="Mini Socity Logo" class="h-24 w-auto object-contain -ml-2 scale-[2.5] origin-left" />
+          </div>
+        </div>
+
+        {/* Links - Creative Minimalist Typography */}
+        <div class="col-span-1 md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
+          {/* Shop */}
+          <ul class="flex flex-col space-y-2">
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Sneakers</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Arrivals</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Accessories</a></li>
+          </ul>
+          
+          {/* Social */}
+          <ul class="flex flex-col space-y-2">
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Instagram</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">TikTok</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Pinterest</a></li>
+          </ul>
+
+          {/* Legal */}
+          <ul class="flex flex-col space-y-2">
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Privacy</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Terms</a></li>
+            <li><a href="#" class="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-black/20 hover:text-black hover:translate-x-2 inline-block transition-all duration-300">Returns</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+  {/* The Voxel Staircase built of many small blocks */}
+  <div class="w-full flex justify-end items-end px-6 md:px-24 pb-8 h-48">
+    <div class="flex items-end pr-8">
+      {Array.from({ length: 16 }).map((_, colIndex) => (
+        <div class="flex flex-col-reverse">
+          {Array.from({ length: Math.floor(colIndex / 2.5) + 1 }).map((_, rowIndex) => {
+            const colors = ['bg-charcoal', 'bg-sage-green', 'bg-charcoal', 'bg-premium-cream'];
+            // Create a pseudo-random but clean pattern
+            const colorClass = colors[(colIndex * 3 + rowIndex) % colors.length];
+            return (
+              <div class={`small-toy-block ${colorClass} w-6 h-6 md:w-8 md:h-8 m-[1px]`}></div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="w-full border-t border-charcoal/10 py-6 text-center">
+    <p class="text-charcoal/40 text-xs font-bold uppercase tracking-widest">© 2026 Mini Socity</p>
+  </div>
+</footer>
+
+<style>
+  .small-toy-block {
+    position: relative;
+    border: 2px solid #333333;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .small-toy-block:hover,
+  .small-toy-block:active {
+    transform: translate(-3px, -3px);
+    z-index: 50;
+    box-shadow: 4px 4px 0px rgba(51, 51, 51, 0.2);
+  }
+
+  /* Top face */
+  .small-toy-block::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 8px;
+    background: inherit;
+    border: 2px solid #333333;
+    border-bottom: none;
+    transform: skewX(-45deg);
+    transform-origin: bottom;
+    filter: brightness(1.15);
+  }
+
+  /* Right face */
+  .small-toy-block::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 8px;
+    height: calc(100% + 4px);
+    background: inherit;
+    border: 2px solid #333333;
+    border-left: none;
+    transform: skewY(-45deg);
+    transform-origin: left;
+    filter: brightness(0.85);
+  }
+</style>

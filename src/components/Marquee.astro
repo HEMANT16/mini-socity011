@@ -1,0 +1,42 @@
+---
+---
+<div class="w-full bg-matte-black text-premium-cream overflow-hidden py-3 flex border-y border-matte-black relative z-10">
+  <div class="animate-marquee whitespace-nowrap flex items-center gap-8 font-heading font-bold text-sm md:text-base tracking-widest uppercase">
+    <span>✨ Premium Comfort</span>
+    <span>•</span>
+    <span>New Drops Every Friday</span>
+    <span>•</span>
+    <span>Street Ready</span>
+    <span>•</span>
+    <span>✨ Premium Comfort</span>
+    <span>•</span>
+    <span>New Drops Every Friday</span>
+    <span>•</span>
+    <span>Street Ready</span>
+    <span>•</span>
+    <span>✨ Premium Comfort</span>
+    <span>•</span>
+    <span>New Drops Every Friday</span>
+    <span>•</span>
+    <span>Street Ready</span>
+    <span>•</span>
+    <span>✨ Premium Comfort</span>
+    <span>•</span>
+    <span>New Drops Every Friday</span>
+    <span>•</span>
+    <span>Street Ready</span>
+    <span>•</span>
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+    /* Duplicate the content inside so it seamlessly loops. */
+    width: max-content;
+  }
+</style>

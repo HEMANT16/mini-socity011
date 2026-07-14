@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-premium-cream: #F8F7F3;
+  --color-matte-black: #1A1A1A;
+  --color-electric-blue: #0047FF;
+  --color-neon-pink: #FF0066;
+  --color-neon-yellow: #E5FF00;
+  --color-sage-green: #6C825F;
+  --color-charcoal: #333333;
+  
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-premium-cream text-matte-black font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}

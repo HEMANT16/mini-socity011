@@ -1,0 +1,30 @@
+---
+import { ShoppingBag, Menu } from 'lucide-react';
+---
+<header class="fixed w-full top-0 z-50 bg-premium-cream/80 backdrop-blur-md border-b border-matte-black/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+    <div class="flex items-center gap-4">
+      <button class="md:hidden p-2 hover:bg-matte-black/5 rounded-full transition-colors">
+        <Menu className="w-6 h-6" />
+      </button>
+      <a href="/" class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center overflow-visible mt-6">
+        <img src="/ms-logo.png" alt="Mini Socity Logo" class="h-16 w-auto object-contain scale-[2.5]" />
+      </a>
+    </div>
+    
+    <nav class="hidden md:flex items-center gap-8 font-medium">
+      <a href="/shop" class="hover:text-electric-blue transition-colors">Shop All</a>
+      <a href="/new" class="hover:text-neon-pink transition-colors">New Drops</a>
+      <a href="/about" class="hover:text-electric-blue transition-colors">Our Story</a>
+    </nav>
+    
+    <div class="flex items-center gap-4">
+      <button class="flex items-center gap-2 p-2 hover:bg-matte-black/5 rounded-full transition-colors group">
+        <div class="relative">
+          <ShoppingBag className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <span class="absolute -top-1 -right-1 bg-neon-pink text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
