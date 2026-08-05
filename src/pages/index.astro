@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.tsx';
 import Marquee from '../components/Marquee.astro';
 import Featured from '../components/Featured.astro';
+import ColorStory from '../components/ColorStory.tsx';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -13,6 +14,7 @@ import Footer from '../components/Footer.astro';
 		<Hero client:load />
 		<Marquee />
         <Featured />
+		<ColorStory client:visible />
 	</main>
     <Footer />
 </Layout>
