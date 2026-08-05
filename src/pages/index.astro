@@ -3,19 +3,36 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.tsx';
 import Marquee from '../components/Marquee.astro';
-import Featured from '../components/Featured.astro';
+import ShoeShowcase from '../components/ShoeShowcase.tsx';
+import ProductDetail from '../components/ProductDetail.tsx';
+import WhySection from '../components/WhySection.astro';
 import ColorStory from '../components/ColorStory.tsx';
+import Featured from '../components/Featured.astro';
+import Craftsmanship from '../components/Craftsmanship.tsx';
+import Testimonials from '../components/Testimonials.tsx';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="MINI SOCITY | Premium Kid's Sneakers">
+<Layout title="MINI SOCIETY — For Little Explorers">
 	<Header />
 	<main>
 		<Hero client:load />
 		<Marquee />
-        <Featured />
+		<section id="collection">
+			<ShoeShowcase client:visible />
+		</section>
+		<ProductDetail client:visible />
+		<WhySection />
 		<ColorStory client:visible />
+		<section id="story">
+			<Featured />
+		</section>
+		<section id="craftsmanship">
+			<Craftsmanship client:visible />
+		</section>
+		<Testimonials client:visible />
 	</main>
-    <Footer />
+	<section id="newsletter">
+		<Footer />
+	</section>
 </Layout>
-

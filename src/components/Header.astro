@@ -1,30 +1,47 @@
 ---
-import { ShoppingBag, Menu } from 'lucide-react';
+// Header.astro
 ---
-<header class="fixed w-full top-0 z-50 bg-premium-cream/80 backdrop-blur-md border-b border-matte-black/10 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
-    <div class="flex items-center gap-4">
-      <button class="md:hidden p-2 hover:bg-matte-black/5 rounded-full transition-colors">
-        <Menu className="w-6 h-6" />
-      </button>
-      <a href="/" class="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center justify-center overflow-visible mt-6">
-        <img src="/ms-logo.png" alt="Mini Socity Logo" class="h-16 w-auto object-contain scale-[2.5]" />
+<header class="fixed top-0 left-0 right-0 z-50 w-full h-24 bg-transparent transition-all duration-300">
+  <div class="container mx-auto px-6 md:px-12 lg:px-20 h-full flex items-center justify-between">
+    
+    <!-- Left Area: Logo -->
+    <div class="flex items-center">
+      <a href="/" class="font-display font-bold text-[13px] tracking-[0.2em] uppercase text-dark flex items-center">
+        MINI SOCIETY
       </a>
     </div>
-    
-    <nav class="hidden md:flex items-center gap-8 font-medium">
-      <a href="/shop" class="hover:text-electric-blue transition-colors">Shop All</a>
-      <a href="/new" class="hover:text-neon-pink transition-colors">New Drops</a>
-      <a href="/about" class="hover:text-electric-blue transition-colors">Our Story</a>
+
+    <!-- Center Area: Nav -->
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="#collection" class="font-display uppercase text-[10px] tracking-[0.25em] font-medium text-dark/40 hover:text-dark transition-colors">
+        COLLECTION
+      </a>
+      <a href="#craftsmanship" class="font-display uppercase text-[10px] tracking-[0.25em] font-medium text-dark/40 hover:text-dark transition-colors">
+        CRAFT
+      </a>
+      <a href="#story" class="font-display uppercase text-[10px] tracking-[0.25em] font-medium text-dark/40 hover:text-dark transition-colors">
+        STORIES
+      </a>
+      <a href="#colors" class="font-display uppercase text-[10px] tracking-[0.25em] font-medium text-dark/40 hover:text-dark transition-colors">
+        COLOURS
+      </a>
     </nav>
-    
+
+    <!-- Right Area: Button -->
     <div class="flex items-center gap-4">
-      <button class="flex items-center gap-2 p-2 hover:bg-matte-black/5 rounded-full transition-colors group">
-        <div class="relative">
-          <ShoppingBag className="w-6 h-6 group-hover:scale-110 transition-transform" />
-          <span class="absolute -top-1 -right-1 bg-neon-pink text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-        </div>
+      <a href="#collection" class="hidden md:flex bg-dark text-cream text-[10px] tracking-[0.2em] uppercase font-semibold px-6 py-2.5 rounded-full hover:bg-dark/80 transition-colors whitespace-nowrap">
+        EXPLORE
+      </a>
+      
+      <!-- Mobile Hamburger -->
+      <button class="md:hidden text-dark/70 hover:text-dark p-2" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
     </div>
+
   </div>
 </header>

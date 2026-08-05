@@ -1,34 +1,136 @@
 @import "tailwindcss";
 
 @theme {
-  --color-premium-cream: #F8F7F3;
-  --color-matte-black: #1A1A1A;
-  --color-electric-blue: #0047FF;
-  --color-neon-pink: #FF0066;
-  --color-neon-yellow: #E5FF00;
-  --color-sage-green: #6C825F;
+  /* ── Brand Palette ── */
+  --color-cream: #FDFDFB;
+  --color-sand: #F5F2EB;
+  --color-mint: #AEE2C9;
+  --color-deep-green: #2F6B52;
+  --color-dark: #1A1A1A;
+  --color-warm-grey: #6B675F;
   --color-charcoal: #333333;
-  
-  --font-heading: "Outfit", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --color-mint-40: rgba(174, 226, 201, 0.4);
+  --color-mint-60: rgba(174, 226, 201, 0.6);
+
+  /* ── Typography ── */
+  --font-display: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Satoshi", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
-  body {
-    @apply bg-premium-cream text-matte-black font-body;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-cream text-dark font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+
+  ::selection {
+    background: rgba(174, 226, 201, 0.5);
+    color: #1A1A1A;
   }
 }
 
 @layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .img-blend {
+    mix-blend-mode: multiply;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ── Film Grain Overlay ── */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+}
+
+/* ── Marquee Animation ── */
+@keyframes marquee-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-x 52s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* ── Fade-in on Scroll ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* ── Smooth Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Subtle Pulse Glow ── */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(174, 226, 201, 0); }
+  50% { box-shadow: 0 0 40px 10px rgba(174, 226, 201, 0.15); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
