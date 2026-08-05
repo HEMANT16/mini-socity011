@@ -110,7 +110,7 @@ export default function ProductDetail() {
             />
           </motion.div>
 
-          {/* Left Features */}
+          {/* Left Features (Desktop Floating) */}
           {leftFeatures.map((feature, i) => (
             <motion.div
               key={`left-${i}`}
@@ -118,7 +118,7 @@ export default function ProductDetail() {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.2 + (i * 0.1) }}
-              className={`absolute z-10 ${feature.position}`}
+              className={`hidden md:block absolute z-10 ${feature.position}`}
             >
               <div className="flex items-center gap-3 bg-white/95 backdrop-blur-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-full pr-5 pl-2 py-2 hover:scale-105 transition-transform duration-300">
                 <div className="w-10 h-10 rounded-full bg-mint/30 flex items-center justify-center text-deep-green shrink-0">
@@ -132,7 +132,7 @@ export default function ProductDetail() {
             </motion.div>
           ))}
 
-          {/* Right Features */}
+          {/* Right Features (Desktop Floating) */}
           {rightFeatures.map((feature, i) => (
             <motion.div
               key={`right-${i}`}
@@ -140,7 +140,7 @@ export default function ProductDetail() {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.5 + (i * 0.1) }}
-              className={`absolute z-10 ${feature.position}`}
+              className={`hidden md:block absolute z-10 ${feature.position}`}
             >
               <div className="flex items-center gap-3 bg-white/95 backdrop-blur-sm shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] rounded-full pr-5 pl-2 py-2 hover:scale-105 transition-transform duration-300">
                 <div className="w-10 h-10 rounded-full bg-mint/30 flex items-center justify-center text-deep-green shrink-0">
@@ -154,6 +154,28 @@ export default function ProductDetail() {
             </motion.div>
           ))}
 
+        </div>
+
+        {/* Mobile Features List (Stacked below image) */}
+        <div className="md:hidden flex flex-col gap-4 mt-8 w-full max-w-sm mx-auto">
+          {[...leftFeatures, ...rightFeatures].map((feature, i) => (
+            <motion.div
+              key={`mobile-${i}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="flex items-center gap-4 bg-white shadow-sm border border-black/5 rounded-2xl p-3"
+            >
+              <div className="w-12 h-12 rounded-full bg-mint/30 flex items-center justify-center text-deep-green shrink-0">
+                {feature.icon}
+              </div>
+              <div className="text-left flex flex-col justify-center">
+                <span className="font-display text-sm font-semibold text-dark leading-tight mb-1">{feature.title}</span>
+                <span className="text-xs text-dark/50 leading-tight">{feature.desc}</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
       </div>

@@ -9,15 +9,7 @@ export default function Hero() {
           
           {/* Left Column (Text) */}
           <div className="flex flex-col items-start z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-4 text-[10px] tracking-[0.4em] uppercase text-dark/40 font-medium mb-8"
-            >
-              <span className="w-8 h-[1px] bg-dark/20"></span>
-              MINI SOCIETY — EST. 2024
-            </motion.div>
+
             
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
